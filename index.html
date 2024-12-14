@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <title>YQFnetwork</title>
+</head>
+<body>
+  <header>
+    <a href="#" class="brand">YQFnetwork</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="#">主页</a>
+        <a href="jj/" >简介</a>
+        <a href="#" >软件下载</a>
+        <a href="https://blog.imyqf.cn">站长博客</a>
+        <a href="https://imyqf.cn">站长首页</a>
+      </div>
+    </div>
+  </header>
+  <section class="home">
+    <video  class="video-slide active" src="home.mp4" autoplay muted loop></video>
+    <video  class="video-slide" src="home2.mp4" autoplay muted loop></video>
+
+    <div class="content active">
+        <h1>老朱网络科技<br><span>致力于创新和可持续性发展</span></h1>
+        <p>一个致力于创新和可持续性发展的公司</p>
+        <a href="#">  公司简介</a>
+    </div>
+
+    <div class="content">
+      <h1>我们始终在更新、创作、创造。<br><span>突破 永不止步！</span></h1>
+      <p>"我们只是一个小团队，并且人数只在20人以内......"</p>
+      <a href="#">  公司简介</a>
+    </div>
+    
+
+    <div class="media-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    
+
+    <div class="slider-navigation">
+      <div class="nav-btn active"></div>
+      <div class="nav-btn"></div>    
+    </div>
+  </section>  
+  <footer>
+    <div class="container">
+        <p>&copy; 2024 老朱网络科技 滇ICP备20240521号-14</p>
+    </div>
+  </footer>
+  
+  
+   
+
+<script>
+ const menuBtn = document.querySelector(".menu-btn")
+ const navigation = document.querySelector(".navigation")
+
+ menuBtn.addEventListener("click",()=>{
+  menuBtn.classList.toggle("active");
+  navigation.classList.toggle("active");
+ });
+
+
+
+ const btns = document.querySelectorAll(".nav-btn")
+ const slides = document.querySelectorAll(".video-slide")
+ const contents = document.querySelectorAll(".content")
+
+ var sliderNav= function(manual){
+  btns.forEach((btn) => {
+    btn.classList.remove("active")
+
+  })
+
+  slides.forEach((slide) => {
+    slide.classList.remove("active")
+  })
+
+  contents.forEach((content) => {
+    content.classList.remove("active")
+  })
+
+  btns[manual].classList.add("active")
+  slides[manual].classList.add("active")
+  contents[manual].classList.add("active")
+
+ }
+
+ btns.forEach((btn,i)=>{
+    btn.addEventListener("click",()=>{
+      sliderNav(i)
+    })
+ });
+ 
+
+
+
+
+</script>
+
+</body>
+
+
+
+</html>
